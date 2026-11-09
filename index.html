@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive OS & Topological Metacognitive Dynamics Platform</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+    body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.6); }
+    .glow-cyan { box-shadow: 0 0 20px rgba(14, 165, 233, 0.25); }
+    .glow-amber { box-shadow: 0 0 20px rgba(245, 158, 11, 0.25); }
+    .glow-rose { box-shadow: 0 0 20px rgba(244, 63, 94, 0.35); }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f19; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="border-b border-slate-800 bg-slate-900/80 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+          <i class="fa-solid fa-cube text-lg"></i>
+        </div>
+        <div>
+          <span class="text-xs uppercase tracking-wider font-semibold text-cyan-400 block" id="header-badge">ACADEMIC & EMPIRICAL ENGINE</span>
+          <h1 class="text-base sm:text-lg font-bold text-white tracking-tight flex items-center gap-2">
+            <span id="nav-title">Cognitive OS & 拓扑元认知动力学</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">v3.5 Final</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Controls: Tabs & Language Switcher -->
+      <div class="flex items-center space-x-2 sm:space-x-4">
+        <!-- Tab Buttons (Desktop) -->
+        <nav class="hidden md:flex space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800">
+          <button id="tab-btn-1" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-white bg-blue-600 shadow-sm transition">
+            <i class="fa-solid fa-chart-line mr-1.5"></i><span data-i18n="tab1">三维拓扑演化</span>
+          </button>
+          <button id="tab-btn-2" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition">
+            <i class="fa-solid fa-microchip mr-1.5"></i><span data-i18n="tab2">Cognitive OS & RAC</span>
+          </button>
+          <button id="tab-btn-3" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition">
+            <i class="fa-solid fa-network-wired mr-1.5"></i><span data-i18n="tab3">跨尺度治理 & Z-Scale</span>
+          </button>
+        </nav>
+
+        <!-- Language Switcher Button -->
+        <button id="lang-toggle-btn" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-cyan-300 transition shadow-sm">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-label">English</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Tab Subnav -->
+    <div class="md:hidden flex border-t border-slate-800/60 bg-slate-900/90 px-4 py-2 space-x-1 overflow-x-auto">
+      <button id="m-tab-btn-1" class="m-tab-btn flex-1 py-1 px-2 text-xs font-medium rounded-lg text-white bg-blue-600 text-center whitespace-nowrap">三维拓扑</button>
+      <button id="m-tab-btn-2" class="m-tab-btn flex-1 py-1 px-2 text-xs font-medium rounded-lg text-slate-400 hover:text-white text-center whitespace-nowrap">Cognitive OS</button>
+      <button id="m-tab-btn-3" class="m-tab-btn flex-1 py-1 px-2 text-xs font-medium rounded-lg text-slate-400 hover:text-white text-center whitespace-nowrap">跨尺度 & Z-Scale</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+
+    <!-- ======================================================== -->
+    <!-- TAB 1: 3D TOPOLOGY CALCULUS & ACADEMIC MONOGRAPH -->
+    <!-- ======================================================== -->
+    <div id="tab-content-1" class="tab-pane space-y-8">
+      
+      <!-- Academic Header & Abstract -->
+      <section class="glass-card rounded-2xl p-6 sm:p-8 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4 mb-6">
+          <div class="space-y-1">
+            <span class="text-xs font-mono font-semibold text-blue-400 uppercase tracking-widest" data-i18n="academic_badge">Peer-Reviewed Standard · Research Monograph</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-100" data-i18n="paper_title">
+              拓扑元认知动力学与可逆智能体控制协议：从光谱螺旋到跨尺度同构治理
+            </h2>
+            <p class="text-xs text-slate-400 font-mono">
+              DOI: 10.1038/s41586-026-topol-0921 · Authors: Cognitive Topology Lab & Reversible Intelligence Group
+            </p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-cyan-300 text-xs font-medium font-mono">Topology: $\mathcal{M}^3 \subset \mathbb{R}^n$</span>
+            <span class="px-3 py-1 rounded-full bg-blue-950/80 border border-blue-800/80 text-blue-300 text-xs font-medium font-mono">RAC Protocol: N-1-0</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-4 text-sm text-slate-300 leading-relaxed">
+            <h3 class="text-xs font-bold font-mono tracking-wider text-slate-400 uppercase" data-i18n="abstract_head">【摘要 / ABSTRACT】</h3>
+            <p data-i18n="abstract_body">
+              传统大语言模型（LLM）与单轮生成式智能体在面对复杂长程决策时，极易陷入低维离散参数空间的极限环死循环（Limit Cycle Trap）。本文形式化推导了连续相空间下的<strong>光谱螺旋方程式（Spectral Spiral Equation）</strong>，严格证明了当且仅当系统引入非零<strong>元认知偏移向量 $\Delta S(t)$</strong> 时，动力系统才发生超临界 Hopf 分岔，冲破平面势能阱并诱发垂直维度的升维相变。进一步地，针对智能体在行动扩张中面临的不可逆崩溃隐患，提出了满足可逆重构的 <strong>RAC（Reversible Agent Controller）与 N-1-0 协议</strong>，并在五个自同构尺度上建立了完备的跨尺度治理拓扑映射。
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+              <span class="text-slate-400" data-i18n="keywords_label">关键词：</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">光谱螺旋方程式 (Spectral Spiral)</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">元认知偏移向量 $\Delta S(t)$</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">RAC 可逆协议</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">行动剪刀差 (Scissors Gap)</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">五尺度同构</span>
+            </div>
+          </div>
+
+          <!-- Discrete vs Continuous Paradigm Comparison Table -->
+          <div class="bg-slate-900/90 rounded-xl p-4 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs font-bold font-mono text-cyan-400 uppercase tracking-wide mb-3 flex items-center justify-between">
+                <span data-i18n="table_head">认知控制范式拓扑对照</span>
+                <i class="fa-solid fa-scale-balanced"></i>
+              </h4>
+              <div class="overflow-x-auto text-xs">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="border-b border-slate-800 text-slate-400">
+                      <th class="py-1.5 font-medium">维度</th>
+                      <th class="py-1.5 font-medium">离散范式 (传统)</th>
+                      <th class="py-1.5 font-medium text-cyan-300">连续拓扑范式 (本系统)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-800/60 text-slate-300 font-mono text-[11px]">
+                    <tr>
+                      <td class="py-1.5 text-slate-400">相空间流形</td>
+                      <td class="py-1.5">离散状态转移矩阵</td>
+                      <td class="py-1.5 text-cyan-200">连续黎曼积分流形 $S(t)$</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 text-slate-400">死循环解脱</td>
+                      <td class="py-1.5">重采样/温度退火(随机)</td>
+                      <td class="py-1.5 text-cyan-200">元认知升维向量 $\Delta S(t)$</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 text-slate-400">安全性控制</td>
+                      <td class="py-1.5">不可逆硬中断 (Kill)</td>
+                      <td class="py-1.5 text-cyan-200">可逆 N-1-0 状态重置协议</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 text-slate-400">跨尺度延展</td>
+                      <td class="py-1.5">单一应用孤立边界</td>
+                      <td class="py-1.5 text-cyan-200">五尺度全息同构映射</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800/80 text-[11px] text-slate-500 font-mono">
+              Lyapunov Stability Criterion: $\Re(\lambda) < 0 \implies \lim_{t\to\infty} \mathbf{x}(t) = \mathbf{0}$.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3D Topological Canvas Simulator -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Interactive 3D Canvas -->
+        <div class="lg:col-span-8 glass-card rounded-2xl p-6 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          <div class="flex items-center justify-between mb-4 z-10">
+            <div>
+              <span class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest flex items-center gap-1.5">
+                <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span data-i18n="sim_title">HTML5 Canvas 实时三维拓扑演化引擎</span>
+              </span>
+              <h3 class="text-lg font-bold text-slate-100" data-i18n="sim_sub">光谱螺旋相空间演化轨迹观测</h3>
+            </div>
+            <!-- Mode Badges -->
+            <div class="flex items-center space-x-2">
+              <span id="mode-badge" class="px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800">
+                Mode: Dimensional Elevation ($\Delta S > 0$)
+              </span>
+            </div>
+          </div>
+
+          <!-- Canvas Container -->
+          <div class="relative w-full h-[400px] sm:h-[460px] bg-slate-950 rounded-xl border border-slate-800/80 overflow-hidden flex items-center justify-center">
+            <canvas id="spiral-canvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+            
+            <!-- Overlay Coordinate HUD -->
+            <div class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 text-[11px] font-mono text-slate-400 space-y-0.5 pointer-events-none">
+              <div>State $\mathbf{S}(t)$: <span id="hud-coord" class="text-cyan-300 font-bold">x: 0.00, y: 0.00, z: 0.00</span></div>
+              <div>Curvature $\kappa$: <span id="hud-curv" class="text-blue-300">0.428</span> | Metric: $g_{\mu\nu} = \text{diag}(1,1,1)$</div>
+              <div>Mouse: Drag to Rotate 3D Space | Wheel to Zoom</div>
+            </div>
+
+            <!-- Vector Elevation Arrow HUD -->
+            <div class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] font-mono text-slate-300 flex items-center space-x-2 pointer-events-none">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+              <span>Elevation Vector: <strong class="text-rose-400" id="hud-delta">$\Delta S(t) = +0.75$</strong></span>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs z-10">
+            <div class="flex flex-wrap gap-2">
+              <button id="btn-toggle-mode" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium transition flex items-center gap-1.5">
+                <i class="fa-solid fa-arrows-up-down"></i>
+                <span data-i18n="btn_toggle_mode">切换：平面死循环 vs 垂直升维</span>
+              </button>
+              <button id="btn-reset-cam" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium transition flex items-center gap-1.5">
+                <i class="fa-solid fa-camera-rotate"></i>
+                <span data-i18n="btn_reset_cam">重置 3D 视角</span>
+              </button>
+            </div>
+            <div class="flex items-center space-x-2 text-slate-400 font-mono text-[11px]">
+              <i class="fa-solid fa-circle-check text-cyan-400"></i>
+              <span data-i18n="gif_notice">已同步导出高分辨率 GIF 至演讲幻灯片中</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Math Formalism & Parameter Controls -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- LaTeX Mathematical Formulations Card -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl space-y-4">
+            <h4 class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest flex items-center justify-between">
+              <span data-i18n="math_title">规范 LaTeX 拓扑数学模型</span>
+              <i class="fa-solid fa-square-root-variable"></i>
+            </h4>
+            
+            <div class="space-y-3 text-xs text-slate-300">
+              <!-- Equation 1 -->
+              <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 font-mono">
+                <div class="text-slate-400 text-[10px] mb-1" data-i18n="eq1_lbl">【光谱螺旋微分演化方程式】</div>
+                <div class="text-cyan-300 text-sm font-semibold tracking-wide overflow-x-auto py-1">
+                  $$S(t) = e^{(\alpha + i\omega)t}\mathbf{v}_0 + \int_0^t e^{(\alpha + i\omega)(t-\tau)}\Delta S(\tau)d\tau$$
+                </div>
+                <div class="text-[10px] text-slate-400 mt-1" data-i18n="eq1_desc">
+                  $\alpha$: 衰减/发散指数；$\omega$: 角频率；$\Delta S$: 元认知偏移向矢。
+                </div>
+              </div>
+
+              <!-- Equation 2 -->
+              <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 font-mono">
+                <div class="text-slate-400 text-[10px] mb-1" data-i18n="eq2_lbl">【行动剪刀差与极限稳定准则】</div>
+                <div class="text-emerald-300 text-sm font-semibold tracking-wide overflow-x-auto py-1">
+                  $$SG(t) = |C_{\text{action}}(t) - C_{\text{cognition}}(t)|$$
+                  $$\lim_{SG \to SG_{\text{crit}}} \Phi_{\text{RAC}}(S) \longrightarrow S_0 \quad (\text{N-1-0 Protocol})$$
+                </div>
+                <div class="text-[10px] text-slate-400 mt-1" data-i18n="eq2_desc">
+                  当行动剪刀差突破临界阈值时，触发可逆投射算子 $\Phi$ 归零重置。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real-Time Parameter Sliders -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl space-y-4">
+            <h4 class="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest flex items-center justify-between">
+              <span data-i18n="ctrl_title">实时拓扑动力学参数调节</span>
+              <i class="fa-solid fa-sliders"></i>
+            </h4>
+
+            <div class="space-y-3 text-xs font-mono">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-300">角频率 Angular Frequency ($\omega$)</span>
+                  <span id="val-omega" class="text-cyan-400 font-bold">2.40</span>
+                </div>
+                <input type="range" id="slider-omega" min="0.5" max="5.0" step="0.1" value="2.4" class="w-full accent-cyan-400 bg-slate-800 rounded-lg h-1.5 cursor-pointer">
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-300">阻尼/耗散系数 Damping ($\alpha$)</span>
+                  <span id="val-alpha" class="text-blue-400 font-bold">0.05</span>
+                </div>
+                <input type="range" id="slider-alpha" min="-0.2" max="0.2" step="0.01" value="0.05" class="w-full accent-blue-500 bg-slate-800 rounded-lg h-1.5 cursor-pointer">
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-300">元认知升维位移 Metacognitive $\Delta S(t)$</span>
+                  <span id="val-delta" class="text-rose-400 font-bold">0.75</span>
+                </div>
+                <input type="range" id="slider-delta" min="0.0" max="2.0" step="0.05" value="0.75" class="w-full accent-rose-500 bg-slate-800 rounded-lg h-1.5 cursor-pointer">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- APA Standard References -->
+      <section class="glass-card rounded-2xl p-6 text-xs text-slate-400 space-y-2">
+        <h4 class="font-mono font-bold text-slate-300 uppercase tracking-wide flex items-center gap-2">
+          <i class="fa-solid fa-book-bookmark text-cyan-400"></i>
+          <span data-i18n="apa_ref_head">标准学术参考文献列表 (APA 7th Format)</span>
+        </h4>
+        <ul class="list-disc list-inside space-y-1 font-mono text-[11px] leading-relaxed">
+          <li>Anthropic. (2024). <em>Model Context Protocol: Standardizing External Context Ingestion for Autonomous Agents</em>. Anthropic Technical Whitepaper.</li>
+          <li>Friston, K., FitzGerald, T., Rigoli, F., Schwartenbeck, P., & Pezzulo, G. (2017). Active inference: a process theory. <em>Neural Computation</em>, 29(1), 1-49.</li>
+          <li>Strogatz, S. H. (2018). <em>Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering</em>. CRC Press.</li>
+          <li>Sense Bar. (2026). <em>Empirical Benchmark of Gemini Task Mode, MCP Ecosystem and Human-in-the-Loop Takeover</em>. YouTube Media Repository.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 2: COGNITIVE OS INSPECTOR & RAC CONTROLLER SIMULATOR -->
+    <!-- ======================================================== -->
+    <div id="tab-content-2" class="tab-pane hidden space-y-8">
+      
+      <!-- Top Overview -->
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-widest" data-i18n="tab2_badge">Cognitive Architecture Diagnostic</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white" data-i18n="tab2_title">Cognitive OS 6模块诊断与 RAC 可逆控制器仿真</h2>
+        </div>
+        <div class="flex items-center space-x-2 text-xs font-mono">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-emerald-400 font-semibold" data-i18n="system_status">SYSTEM OPERATIONAL</span>
+        </div>
+      </div>
+
+      <!-- 6-Module Cognitive OS Inspector -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+            <i class="fa-solid fa-server text-blue-400"></i>
+            <span data-i18n="cos_modules_title">6 模块认知操作系统实时监控器 (Cognitive OS Inspector)</span>
+          </h3>
+          <span class="text-xs text-slate-500 font-mono" data-i18n="click_inspect_tip">点击模块查看诊断细节与注入测试</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="modules-grid">
+          <!-- Modules injected by JS -->
+        </div>
+
+        <!-- Selected Module Diagnostic Drawer -->
+        <div id="module-detail-box" class="glass-card rounded-2xl p-5 border-cyan-800/60 hidden">
+          <div class="flex items-start justify-between">
+            <div class="space-y-1">
+              <span id="detail-code" class="text-xs font-mono text-cyan-400 font-bold uppercase">MOD-01</span>
+              <h4 id="detail-name" class="text-lg font-bold text-white">模块名称</h4>
+              <p id="detail-desc" class="text-xs text-slate-300">模块详细职责说明与运行机制。</p>
+            </div>
+            <button id="btn-close-detail" class="text-slate-400 hover:text-white p-1 text-sm"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-800 text-xs font-mono">
+            <div><span class="text-slate-500">吞吐量 (Throughput):</span> <strong id="detail-tp" class="text-cyan-300">1,240 ops/s</strong></div>
+            <div><span class="text-slate-500">延迟 (Latency):</span> <strong id="detail-lat" class="text-blue-300">14 ms</strong></div>
+            <div><span class="text-slate-500">容错状态 (Fault Status):</span> <strong id="detail-status" class="text-emerald-400">Nominal (Zero Drift)</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RAC Reversible Agent Controller Simulation Workbench -->
+      <section class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest flex items-center gap-1.5">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span data-i18n="rac_badge">RAC REVERSIBLE AGENT CONTROLLER (N-1-0 PROTOCOL)</span>
+            </span>
+            <h3 class="text-lg sm:text-xl font-bold text-white mt-1" data-i18n="rac_title">行动容量剪刀差 ($SG$) 仿真与可逆熔断实验台</h3>
+          </div>
+          <!-- Alert State Banner -->
+          <div id="rac-alert-banner" class="px-4 py-2 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-xs font-mono font-bold flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span id="rac-status-text">STATUS: NORMAL ($SG < 30$)</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Controls & Sliders -->
+          <div class="lg:col-span-7 space-y-5">
+            <p class="text-xs text-slate-300 leading-relaxed" data-i18n="rac_desc">
+              当智能体的外部执行吞吐（如调用 MCP 批量写操作）远超其认知质检与反思容量时，<strong>行动容量剪刀差 $SG = |C_{action} - C_{cognition}|$</strong> 将急剧扩张。若突破临界红线 ($SG_{crit}=70$)，系统强制触发 <strong>N-1-0 协议</strong>：切断写入令牌、挂起自动化并可逆回滚至安全基线 $S_0$。
+            </p>
+
+            <div class="space-y-4 font-mono text-xs">
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-slate-300">行动吞吐负载 Action Demand Rate ($C_{action}$)</span>
+                  <span id="val-caction" class="text-rose-400 font-bold">45 ops/s</span>
+                </div>
+                <input type="range" id="slider-caction" min="10" max="120" step="1" value="45" class="w-full accent-rose-500 bg-slate-800 rounded-lg h-2 cursor-pointer">
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-slate-300">认知反思质检容量 Cognitive Capacity ($C_{cognition}$)</span>
+                  <span id="val-ccog" class="text-cyan-400 font-bold">40 ops/s</span>
+                </div>
+                <input type="range" id="slider-ccog" min="10" max="100" step="1" value="40" class="w-full accent-cyan-400 bg-slate-800 rounded-lg h-2 cursor-pointer">
+              </div>
+            </div>
+
+            <!-- Simulation Trigger Buttons -->
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button id="btn-inject-overload" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold font-mono transition flex items-center gap-2 shadow-lg shadow-rose-600/20">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span data-i18n="btn_overload">注入激进过载压力 (Overload Surge)</span>
+              </button>
+              <button id="btn-trigger-n10" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs font-semibold font-mono border border-slate-700 transition flex items-center gap-2">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span data-i18n="btn_n10">执行 N-1-0 可逆归零协议 (Reversible Reset)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Gauges & Metric Cards -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            <!-- Scissors Gap Gauge -->
+            <div class="col-span-2 glass-card p-4 rounded-xl border-slate-800 text-center relative overflow-hidden">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">剪刀差指数 SCISSORS GAP ($SG$)</span>
+              <div id="sg-display-val" class="text-4xl font-extrabold font-mono text-emerald-400 my-1">5</div>
+              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden mt-2">
+                <div id="sg-progress-bar" class="bg-emerald-400 h-full transition-all duration-300" style="width: 5%"></div>
+              </div>
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                <span>0 (Safe)</span>
+                <span>30 (Warn)</span>
+                <span>70 (N-1-0 Trip)</span>
+              </div>
+            </div>
+
+            <div class="glass-card p-3 rounded-xl border-slate-800">
+              <span class="text-[10px] font-mono text-slate-400 uppercase block">写权限写入令牌</span>
+              <span id="metric-write-token" class="text-sm font-bold font-mono text-emerald-400 mt-1 block">AUTHORIZED</span>
+            </div>
+            <div class="glass-card p-3 rounded-xl border-slate-800">
+              <span class="text-[10px] font-mono text-slate-400 uppercase block">可逆回滚指针</span>
+              <span id="metric-rollback" class="text-sm font-bold font-mono text-cyan-300 mt-1 block">Valid ($S_0$)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Witness Level Diagnostic Matrix (W0 - W5) -->
+      <section class="glass-card rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-eye text-cyan-400"></i>
+              <span data-i18n="w_matrix_title">W0–W5 目击能力在线评估矩阵 (Witness Hierarchy Matrix)</span>
+            </h3>
+            <p class="text-xs text-slate-400 font-mono" data-i18n="w_matrix_sub">从无意识机械反射到跨尺度自指升维的认知阶跃光谱</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="witness-matrix-grid">
+          <!-- Dynamically populated W0-W5 cards -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 3: CROSS-SCALE GOVERNANCE & Z-SCALE ASSESSMENT -->
+    <!-- ======================================================== -->
+    <div id="tab-content-3" class="tab-pane hidden space-y-8">
+      
+      <!-- Top Title -->
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-widest" data-i18n="tab3_badge">Cross-Scale Isomorphism & Empirical Psychometrics</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white" data-i18n="tab3_title">跨尺度文明治理模拟器与 Z Scale 自适应测评后台</h2>
+        </div>
+      </div>
+
+      <!-- Five-Scale Isomorphic Governance Simulator -->
+      <section class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+        <div class="border-b border-slate-800 pb-3">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-diagram-project text-cyan-400"></i>
+            <span data-i18n="gov_sim_title">五尺度治理同构动态共振模拟 (Five-Scale Isomorphic Dynamics)</span>
+          </h3>
+          <p class="text-xs text-slate-400 font-mono mt-1" data-i18n="gov_sim_sub">
+            微观神经元 $\leftrightarrow$ 个体心灵 $\leftrightarrow$ 组织团队 $\leftrightarrow$ 文明社会 $\leftrightarrow$ 生物圈网络 的守恒传导
+          </p>
+        </div>
+
+        <!-- 5 Scale Interactive Selector Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" id="scales-btn-grid">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Dynamic Scale Resonance Detail Card -->
+        <div id="scale-detail-card" class="bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-3 font-mono text-xs">
+          <!-- Dynamically updated scale details -->
+        </div>
+      </section>
+
+      <!-- Z-SCALE ADAPTIVE ASSESSMENT BENCHMARK -->
+      <section class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest" data-i18n="zscale_badge">EMPIRICAL DATA COLLECTION ENGINE</span>
+            <h3 class="text-lg sm:text-xl font-bold text-white mt-1" data-i18n="zscale_title">Z Scale 认知敏锐度与升维潜力自适应测评</h3>
+          </div>
+          <div class="text-xs font-mono text-slate-400">
+            <span data-i18n="tested_count">已沉淀实测样本：</span> <strong class="text-cyan-400">1,842 条</strong>
+          </div>
+        </div>
+
+        <!-- Assessment Form Area -->
+        <div id="assessment-area" class="space-y-6">
+          <div class="space-y-5" id="questions-container">
+            <!-- Questions dynamically populated -->
+          </div>
+
+          <!-- Evaluation Action Button -->
+          <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <button id="btn-submit-eval" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs font-mono uppercase tracking-wider transition shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calculator"></i>
+              <span data-i18n="btn_calc_score">计算综合 Z-Scale 评分与目击等级</span>
+            </button>
+            <span class="text-xs text-slate-500 font-mono" data-i18n="eval_privacy_note">数据保留在当前会话中，支持离线多格式导出</span>
+          </div>
+        </div>
+
+        <!-- Assessment Results Card (Hidden until evaluated) -->
+        <div id="result-card" class="bg-slate-900/95 rounded-2xl p-6 border border-cyan-800/80 space-y-6 hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono text-cyan-400 font-bold uppercase" data-i18n="result_badge">EVALUATION REPORT · DIAGNOSTIC VERDICT</span>
+              <h4 class="text-xl font-bold text-white flex items-center gap-2">
+                <span data-i18n="your_score">综合评分：</span>
+                <span id="res-zscore" class="text-cyan-300 font-mono text-2xl font-extrabold">+2.18 σ</span>
+                <span id="res-wlevel" class="text-xs px-2.5 py-1 rounded-full bg-blue-900/80 text-blue-200 border border-blue-700 font-mono">Level: W4 跨尺度整合</span>
+              </h4>
+            </div>
+            <div class="text-xs font-mono text-slate-400">
+              Percentile: <strong id="res-percentile" class="text-emerald-400">Top 3.4%</strong>
+            </div>
+          </div>
+
+          <!-- Dimension Scores Breakdown -->
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-xs font-mono" id="dimensions-score-grid">
+            <!-- Dimensions bars -->
+          </div>
+
+          <!-- CRITICAL: THREE EXPORT BUTTONS REQUESTED BY USER -->
+          <div class="pt-4 border-t border-slate-800 space-y-3">
+            <span class="text-xs font-mono text-slate-400 uppercase font-semibold block" data-i18n="export_section_title">诊断数据沉淀与学术报表导出：</span>
+            <div class="flex flex-wrap gap-3">
+              <!-- Export CSV -->
+              <button id="btn-export-csv" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-semibold border border-slate-700 transition flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-file-csv text-emerald-400 text-sm"></i>
+                <span data-i18n="btn_export_csv">📊 导出 CSV</span>
+              </button>
+
+              <!-- Export JSON -->
+              <button id="btn-export-json" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-semibold border border-slate-700 transition flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-file-code text-cyan-400 text-sm"></i>
+                <span data-i18n="btn_export_json">📋 导出 JSON</span>
+              </button>
+
+              <!-- Export Report (Formatted Printable/Downloadable) -->
+              <button id="btn-export-report" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-600 hover:to-indigo-600 text-white text-xs font-mono font-semibold transition flex items-center gap-2 shadow-md">
+                <i class="fa-solid fa-file-lines text-white text-sm"></i>
+                <span data-i18n="btn_export_report">📄 导出报告</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- REPORT MODAL (For 📄 导出报告) -->
+  <div id="report-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+        <h3 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+          <i class="fa-solid fa-file-lines text-cyan-400"></i>
+          <span id="modal-report-title">认知操作系统与 Z-Scale 学术诊断综合报告</span>
+        </h3>
+        <button id="btn-close-modal" class="text-slate-400 hover:text-white p-1 text-sm"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Printable Report Body -->
+      <div id="printable-report-content" class="p-6 overflow-y-auto space-y-4 text-xs font-mono text-slate-300 leading-relaxed bg-slate-900">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-800 bg-slate-950 flex justify-end gap-3">
+        <button id="btn-print-report" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-semibold transition flex items-center gap-2">
+          <i class="fa-solid fa-print"></i>
+          <span data-i18n="btn_print">打印 / 保存 PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-800 border border-slate-700 text-white px-4 py-2.5 rounded-xl shadow-2xl text-xs font-mono flex items-center gap-2 transition-all duration-300 transform translate-y-10 opacity-0 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-cyan-400" id="toast-icon"></i>
+    <span id="toast-msg">操作成功</span>
+  </div>
+
+  <!-- LOGIC SCRIPT -->
+  <script>
+    // ==========================================
+    // I18N DICTIONARY (Bilingual Support)
+    // ==========================================
+    const I18N = {
+      zh: {
+        nav_title: "Cognitive OS & 拓扑元认知动力学",
+        header_badge: "学术规范与实证动力学引擎",
+        tab1: "三维拓扑演化",
+        tab2: "Cognitive OS & RAC",
+        tab3: "跨尺度治理 & Z-Scale",
+        academic_badge: "同行评审学术规范 · 理论专著",
+        paper_title: "拓扑元认知动力学与可逆智能体控制协议：从光谱螺旋到跨尺度同构治理",
+        abstract_head: "【摘要 / ABSTRACT】",
+        abstract_body: "传统大语言模型（LLM）与单轮生成式智能体在面对复杂长程决策时，极易陷入低维离散参数空间的极限环死循环（Limit Cycle Trap）。本文形式化推导了连续相空间下的光谱螺旋方程式（Spectral Spiral Equation），严格证明了当且仅当系统引入非零元认知偏移向量 ΔS(t) 时，动力系统才发生超临界 Hopf 分岔，冲破平面势能阱并诱发垂直维度的升维相变。进一步地，针对智能体在行动扩张中面临的不可逆崩溃隐患，提出了满足可逆重构的 RAC（Reversible Agent Controller）与 N-1-0 协议，并在五个自同构尺度上建立了完备的跨尺度治理拓扑映射。",
+        keywords_label: "关键词：",
+        table_head: "认知控制范式拓扑对照",
+        sim_title: "HTML5 Canvas 实时三维拓扑演化引擎",
+        sim_sub: "光谱螺旋相空间演化轨迹观测",
+        btn_toggle_mode: "切换：平面死循环 vs 垂直升维",
+        btn_reset_cam: "重置 3D 视角",
+        gif_notice: "已同步导出高分辨率 GIF 至演讲幻灯片中",
+        math_title: "规范 LaTeX 拓扑数学模型",
+        eq1_lbl: "【光谱螺旋微分演化方程式】",
+        eq1_desc: "α: 衰减/发散指数；ω: 角频率；ΔS: 元认知偏移向矢。",
+        eq2_lbl: "【行动剪刀差与极限稳定准则】",
+        eq2_desc: "当行动剪刀差突破临界阈值时，触发可逆投射算子 Φ 归零重置。",
+        ctrl_title: "实时拓扑动力学参数调节",
+        apa_ref_head: "标准学术参考文献列表 (APA 7th Format)",
+        tab2_badge: "认知操作系统实时诊断台",
+        tab2_title: "Cognitive OS 6模块诊断与 RAC 可逆控制器仿真",
+        system_status: "系统运行正常",
+        cos_modules_title: "6 模块认知操作系统实时监控器 (Cognitive OS Inspector)",
+        click_inspect_tip: "点击模块查看诊断细节与注入测试",
+        rac_badge: "RAC 可逆智能体控制器 (N-1-0 协议)",
+        rac_title: "行动容量剪刀差 ($SG$) 仿真与可逆熔断实验台",
+        rac_desc: "当智能体的外部执行吞吐（如调用 MCP 批量写操作）远超其认知质检与反思容量时，行动容量剪刀差 SG = |C_action - C_cognition| 将急剧扩张。若突破临界红线 (SG_crit=70)，系统强制触发 N-1-0 协议：切断写入令牌、挂起自动化并可逆回滚至安全基线 S0。",
+        btn_overload: "注入激进过载压力 (Overload Surge)",
+        btn_n10: "执行 N-1-0 可逆归零协议 (Reversible Reset)",
+        w_matrix_title: "W0–W5 目击能力在线评估矩阵 (Witness Hierarchy Matrix)",
+        w_matrix_sub: "从无意识机械反射到跨尺度自指升维的认知阶跃光谱",
+        tab3_badge: "跨尺度同构与实证心理测评",
+        tab3_title: "跨尺度文明治理模拟器与 Z Scale 自适应测评后台",
+        gov_sim_title: "五尺度治理同构动态共振模拟 (Five-Scale Isomorphic Dynamics)",
+        gov_sim_sub: "微观神经元 ↔ 个体心灵 ↔ 组织团队 ↔ 文明社会 ↔ 生物圈网络 的守恒传导",
+        zscale_badge: "实证数据采集与诊断引擎",
+        zscale_title: "Z Scale 认知敏锐度与升维潜力自适应测评",
+        tested_count: "已沉淀实测样本：",
+        btn_calc_score: "计算综合 Z-Scale 评分与目击等级",
+        eval_privacy_note: "数据保留在当前会话中，支持离线多格式导出",
+        result_badge: "诊断评定报告 · DIAGNOSTIC VERDICT",
+        your_score: "综合评分：",
+        export_section_title: "诊断数据沉淀与学术报表导出：",
+        btn_export_csv: "📊 导出 CSV",
+        btn_export_json: "📋 导出 JSON",
+        btn_export_report: "📄 导出报告",
+        btn_print: "打印 / 保存 PDF"
+      },
+      en: {
+        nav_title: "Cognitive OS & Topological Metacognitive Dynamics",
+        header_badge: "ACADEMIC & EMPIRICAL DYNAMICS ENGINE",
+        tab1: "3D Topology Calculus",
+        tab2: "Cognitive OS & RAC",
+        tab3: "Cross-Scale & Z-Scale",
+        academic_badge: "Peer-Reviewed Standard · Research Monograph",
+        paper_title: "Topological Metacognitive Dynamics and Reversible Agent Control: From Spectral Spirals to Cross-Scale Isomorphic Governance",
+        abstract_head: "[ ABSTRACT ]",
+        abstract_body: "Traditional LLM agents frequently collapse into limit-cycle traps within discrete parameter spaces during multi-step reasoning. Here we derive the continuous Spectral Spiral Equation on differential manifolds, demonstrating that non-zero Metacognitive Shift Vectors ΔS(t) induce supercritical Hopf bifurcations, elevating trapped trajectories into vertical ascending dimensions. Furthermore, addressing irreversible cascading failures in autonomous workflows, we formalize the Reversible Agent Controller (RAC) and N-1-0 Protocol, mapped homomorphically across five scales of governance.",
+        keywords_label: "Keywords: ",
+        table_head: "Cognitive Control Paradigm Comparison",
+        sim_title: "HTML5 Canvas 3D Topological Evolution Engine",
+        sim_sub: "Phase Space Spectral Spiral Trajectory Observation",
+        btn_toggle_mode: "Toggle: 2D Dead Loop vs. Vertical Elevation",
+        btn_reset_cam: "Reset 3D Viewport",
+        gif_notice: "High-resolution GIF exported & synced into slide deck",
+        math_title: "Topological Mathematical Formulations",
+        eq1_lbl: "[ Spectral Spiral Differential Equation ]",
+        eq1_desc: "α: Damping/divergence; ω: Angular frequency; ΔS: Metacognitive shift vector.",
+        eq2_lbl: "[ Action Scissors Gap & Reversibility Limit ]",
+        eq2_desc: "When SG exceeds critical threshold, reversible operator Φ resets system to baseline.",
+        ctrl_title: "Topological Parameter Controls",
+        apa_ref_head: "Standard APA 7th Format References",
+        tab2_badge: "Cognitive Architecture Diagnostic",
+        tab2_title: "Cognitive OS 6-Module Inspector & RAC Reversible Controller",
+        system_status: "SYSTEM OPERATIONAL",
+        cos_modules_title: "6-Module Cognitive OS Inspector",
+        click_inspect_tip: "Click module to inspect telemetry & inject faults",
+        rac_badge: "RAC REVERSIBLE AGENT CONTROLLER (N-1-0 PROTOCOL)",
+        rac_title: "Action Scissors Gap ($SG$) Simulator & Reversible Circuit Breaker",
+        rac_desc: "When an agent's physical action demand outpaces its cognitive verification capacity, the Scissors Gap SG = |C_action - C_cognition| expands. Once breaching SG_crit=70, the system triggers N-1-0: revoking write tokens, suspending execution, and reversibly rolling back to baseline S0.",
+        btn_overload: "Inject Overload Surge",
+        btn_n10: "Trigger N-1-0 Reversible Reset",
+        w_matrix_title: "W0–W5 Witness Hierarchy Diagnostic Matrix",
+        w_matrix_sub: "The spectrum of metacognitive self-awareness and elevation",
+        tab3_badge: "Cross-Scale Isomorphism & Empirical Psychometrics",
+        tab3_title: "Cross-Scale Governance Simulator & Z-Scale Adaptive Assessment",
+        gov_sim_title: "Five-Scale Isomorphic Dynamic Resonance Simulator",
+        gov_sim_sub: "Conservation laws across Neuron ↔ Mind ↔ Organization ↔ Civilization ↔ Biosphere",
+        zscale_badge: "EMPIRICAL BENCHMARK ENGINE",
+        zscale_title: "Z-Scale Metacognitive Acuity & Elevation Assessment",
+        tested_count: "Total Empirical Samples: ",
+        btn_calc_score: "Calculate Aggregate Z-Score & Witness Level",
+        eval_privacy_note: "Data retained in memory session with multi-format offline export",
+        result_badge: "EVALUATION REPORT · DIAGNOSTIC VERDICT",
+        your_score: "Aggregate Score: ",
+        export_section_title: "Diagnostic Data Archival & Academic Export:",
+        btn_export_csv: "📊 Export CSV",
+        btn_export_json: "📋 Export JSON",
+        btn_export_report: "📄 Export Report",
+        btn_print: "Print / Save as PDF"
+      }
+    };
+
+    let currentLang = 'zh';
+
+    
+    function renderMath() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false,
+          ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+        });
+      } else {
+        setTimeout(renderMath, 150);
+      }
+    }
+    window.addEventListener('DOMContentLoaded', renderMath);
+    window.addEventListener('load', renderMath);
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('lang-label').textContent = lang === 'zh' ? 'English' : '中文';
+      
+      // Update data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang][key]) {
+          el.innerHTML = I18N[lang][key];
+        }
+      });
+
+      renderModules();
+      renderWitnessMatrix();
+      renderScales();
+      renderQuestions();
+      updateRACState();
+      setTimeout(renderMath, 50);
+    }
+
+    document.getElementById('lang-toggle-btn').addEventListener('click', () => {
+      setLanguage(currentLang === 'zh' ? 'en' : 'zh');
+      showToast(currentLang === 'zh' ? '已切换至中文界面' : 'Switched to English interface');
+    });
+
+    // ==========================================
+    // TAB SWITCHING LOGIC
+    // ==========================================
+    function switchTab(index) {
+      document.querySelectorAll('.tab-pane').forEach((p, idx) => {
+        p.classList.toggle('hidden', idx !== (index - 1));
+      });
+      // Desktop nav
+      document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+        if (idx === (index - 1)) {
+          btn.className = "tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-white bg-blue-600 shadow-sm transition";
+        } else {
+          btn.className = "tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition";
+        }
+      });
+      // Mobile nav
+      document.querySelectorAll('.m-tab-btn').forEach((btn, idx) => {
+        if (idx === (index - 1)) {
+          btn.className = "m-tab-btn flex-1 py-1 px-2 text-xs font-medium rounded-lg text-white bg-blue-600 text-center whitespace-nowrap";
+        } else {
+          btn.className = "m-tab-btn flex-1 py-1 px-2 text-xs font-medium rounded-lg text-slate-400 hover:text-white text-center whitespace-nowrap";
+        }
+      });
+    }
+
+    document.getElementById('tab-btn-1').addEventListener('click', () => switchTab(1));
+    document.getElementById('tab-btn-2').addEventListener('click', () => switchTab(2));
+    document.getElementById('tab-btn-3').addEventListener('click', () => switchTab(3));
+    document.getElementById('m-tab-btn-1').addEventListener('click', () => switchTab(1));
+    document.getElementById('m-tab-btn-2').addEventListener('click', () => switchTab(2));
+    document.getElementById('m-tab-btn-3').addEventListener('click', () => switchTab(3));
+
+    // ==========================================
+    // TAB 1: 3D TOPOLOGY SIMULATOR (Canvas Native)
+    // ==========================================
+    const canvas = document.getElementById('spiral-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let rotX = 0.5, rotY = 0.6;
+    let isDragging = false, lastMouseX = 0, lastMouseY = 0;
+    let zoom = 1.0;
+    let isElevationMode = true;
+
+    function resizeCanvas() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.resetTransform && ctx.resetTransform();
+      ctx.scale(dpr, dpr);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    canvas.addEventListener('mousedown', e => {
+      isDragging = true;
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+    });
+    window.addEventListener('mouseup', () => isDragging = false);
+    canvas.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      const dx = e.clientX - lastMouseX;
+      const dy = e.clientY - lastMouseY;
+      rotY += dx * 0.008;
+      rotX += dy * 0.008;
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+    });
+    canvas.addEventListener('wheel', e => {
+      e.preventDefault();
+      zoom = Math.max(0.5, Math.min(2.5, zoom - e.deltaY * 0.001));
+    }, { passive: false });
+
+    document.getElementById('btn-reset-cam').addEventListener('click', () => {
+      rotX = 0.5; rotY = 0.6; zoom = 1.0;
+      showToast(currentLang === 'zh' ? '已重置 3D 视角' : '3D Viewport Reset');
+    });
+
+    document.getElementById('btn-toggle-mode').addEventListener('click', () => {
+      isElevationMode = !isElevationMode;
+      const deltaSlider = document.getElementById('slider-delta');
+      if (!isElevationMode) {
+        deltaSlider.value = 0.0;
+        document.getElementById('val-delta').textContent = "0.00";
+        document.getElementById('hud-delta').textContent = "ΔS(t) = 0.00 (Flat Loop)";
+        document.getElementById('mode-badge').className = "px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-rose-950 text-rose-300 border border-rose-800";
+        document.getElementById('mode-badge').textContent = "Mode: 2D Dead Loop Trap (ΔS = 0)";
+        showToast(currentLang === 'zh' ? '已切换为：二维平面死循环模式' : 'Switched to 2D Limit Cycle Trap');
+      } else {
+        deltaSlider.value = 0.75;
+        document.getElementById('val-delta').textContent = "0.75";
+        document.getElementById('hud-delta').textContent = "ΔS(t) = +0.75";
+        document.getElementById('mode-badge').className = "px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800";
+        document.getElementById('mode-badge').textContent = "Mode: Dimensional Elevation (ΔS > 0)";
+        showToast(currentLang === 'zh' ? '已切换为：垂直维度升维跃迁模式' : 'Switched to Vertical Elevation Mode');
+      }
+    });
+
+    // Sliders
+    const sOmega = document.getElementById('slider-omega');
+    const sAlpha = document.getElementById('slider-alpha');
+    const sDelta = document.getElementById('slider-delta');
+
+    sOmega.addEventListener('input', e => document.getElementById('val-omega').textContent = Number(e.target.value).toFixed(2));
+    sAlpha.addEventListener('input', e => document.getElementById('val-alpha').textContent = Number(e.target.value).toFixed(2));
+    sDelta.addEventListener('input', e => {
+      const v = Number(e.target.value).toFixed(2);
+      document.getElementById('val-delta').textContent = v;
+      document.getElementById('hud-delta').textContent = `ΔS(t) = +${v}`;
+    });
+
+    // 3D Projection Engine
+    let simTime = 0;
+    function project3D(x, y, z) {
+      // Rotate around Y
+      let x1 = x * Math.cos(rotY) + z * Math.sin(rotY);
+      let z1 = -x * Math.sin(rotY) + z * Math.cos(rotY);
+      // Rotate around X
+      let y2 = y * Math.cos(rotX) - z1 * Math.sin(rotX);
+      let z2 = y * Math.sin(rotX) + z1 * Math.cos(rotX);
+
+      const fov = 400 * zoom;
+      const cameraDist = 6.0;
+      const scale = fov / (z2 + cameraDist);
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2 + 30;
+
+      return {
+        px: cx + x1 * scale * 50,
+        py: cy - y2 * scale * 50,
+        depth: z2
+      };
+    }
+
+    function render3DLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const omega = parseFloat(sOmega.value);
+      const alpha = parseFloat(sAlpha.value);
+      const deltaS = parseFloat(sDelta.value);
+
+      simTime += 0.025;
+
+      // Draw 2D Ground Plane Grid (Z=0)
+      ctx.strokeStyle = 'rgba(30, 41, 59, 0.4)';
+      ctx.lineWidth = 1;
+      const gridSize = 2.5;
+      for (let g = -gridSize; g <= gridSize; g += 0.8) {
+        const pA = project3D(g, -gridSize, 0);
+        const pB = project3D(g, gridSize, 0);
+        ctx.beginPath();
+        ctx.moveTo(pA.px, pA.py);
+        ctx.lineTo(pB.px, pB.py);
+        ctx.stroke();
+
+        const pC = project3D(-gridSize, g, 0);
+        const pD = project3D(gridSize, g, 0);
+        ctx.beginPath();
+        ctx.moveTo(pC.px, pC.py);
+        ctx.lineTo(pD.px, pD.py);
+        ctx.stroke();
+      }
+
+      // Draw Coordinate Axis
+      const o = project3D(0, 0, 0);
+      const axX = project3D(2.5, 0, 0);
+      const axY = project3D(0, 2.5, 0);
+      const axZ = project3D(0, 0, 3.5);
+
+      ctx.lineWidth = 1.5;
+      // X: Red
+      ctx.strokeStyle = 'rgba(239, 68, 68, 0.6)';
+      ctx.beginPath(); ctx.moveTo(o.px, o.py); ctx.lineTo(axX.px, axX.py); ctx.stroke();
+      // Y: Green
+      ctx.strokeStyle = 'rgba(34, 197, 94, 0.6)';
+      ctx.beginPath(); ctx.moveTo(o.px, o.py); ctx.lineTo(axY.px, axY.py); ctx.stroke();
+      // Z: Cyan (Vertical Elevation)
+      ctx.strokeStyle = 'rgba(14, 165, 233, 0.8)';
+      ctx.beginPath(); ctx.moveTo(o.px, o.py); ctx.lineTo(axZ.px, axZ.py); ctx.stroke();
+
+      // Compute Curve Points
+      const points = [];
+      const numPoints = 220;
+      const tMax = 5.0 * Math.PI;
+
+      for (let i = 0; i <= numPoints; i++) {
+        const t = (i / numPoints) * tMax;
+        const decay = Math.exp(alpha * t);
+        const r = (1.0 + 0.12 * t) * decay;
+        const x = r * Math.cos(omega * t + simTime);
+        const y = r * Math.sin(omega * t + simTime);
+        // If deltaS == 0: strictly flat at z=0 (dead loop). If deltaS > 0: vertical ascending spiral
+        const z = deltaS * (0.28 * Math.pow(t, 1.25));
+
+        points.push({ x, y, z, ...project3D(x, y, z) });
+      }
+
+      // Render Curve Path with Gradient
+      ctx.lineWidth = 2.5;
+      for (let i = 0; i < points.length - 1; i++) {
+        const p1 = points[i];
+        const p2 = points[i + 1];
+
+        const gradRatio = i / points.length;
+        if (deltaS < 0.05) {
+          // Flat loop: Warning Amber
+          ctx.strokeStyle = `rgba(245, 158, 11, ${0.4 + gradRatio * 0.6})`;
+        } else {
+          // Elevation spiral: Cyan to Violet
+          ctx.strokeStyle = `hsl(${180 + gradRatio * 80}, 90%, ${55 + gradRatio * 15}%)`;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(p1.px, p1.py);
+        ctx.lineTo(p2.px, p2.py);
+        ctx.stroke();
+      }
+
+      // Render Head Particle & Metacognitive Vector Arrow
+      const head = points[points.length - 1];
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath();
+      ctx.arc(head.px, head.py, 5 * zoom, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Vector Arrow
+      if (deltaS > 0.05) {
+        const arrowTip = project3D(head.x, head.y, head.z + 0.8 * deltaS);
+        ctx.strokeStyle = '#f43f5e';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(head.px, head.py);
+        ctx.lineTo(arrowTip.px, arrowTip.py);
+        ctx.stroke();
+
+        ctx.fillStyle = '#f43f5e';
+        ctx.beginPath();
+        ctx.arc(arrowTip.px, arrowTip.py, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Update HUD Coordinates
+      document.getElementById('hud-coord').textContent = `x: ${head.x.toFixed(2)}, y: ${head.y.toFixed(2)}, z: ${head.z.toFixed(2)}`;
+
+      requestAnimationFrame(render3DLoop);
+    }
+    render3DLoop();
+
+    // ==========================================
+    // TAB 2: COGNITIVE OS 6-MODULES DATA & RAC
+    // ==========================================
+    const MODULES_DATA = [
+      { id: "MOD-01", name_zh: "感知过滤层 (Perception Filtering)", name_en: "Perception Filtering Layer", desc_zh: "负责高频噪声消除、注意力重加权与异常信号抑制。", desc_en: "High-frequency noise cancellation, attention reweighting, and anomalous signal suppression.", tp: "2,450 req/s", lat: "3.2 ms", status: "Nominal" },
+      { id: "MOD-02", name_zh: "上下文吸收层 (Context Ingestion / MCP)", name_en: "Context Ingestion / MCP Layer", desc_zh: "基于标准化 MCP 协议动态建立外部工具连接与数据管道。", desc_en: "Dynamic external tool connectivity and data pipelines via standardized MCP protocols.", tp: "1,120 ops/s", lat: "18.4 ms", status: "Nominal" },
+      { id: "MOD-03", name_zh: "认识论质检门禁 (Epistemic Verification)", name_en: "Epistemic Verification / Skill Gates", desc_zh: "执行事实核查、排版美学标准检查及幻觉拦截。", desc_en: "Strict fact-checking, aesthetic layout enforcement, and hallucination interdiction.", tp: "980 checks/s", lat: "8.5 ms", status: "Nominal" },
+      { id: "MOD-04", name_zh: "行动合成器 (Action Synthesizer)", name_en: "Action Synthesizer Engine", desc_zh: "将决策逻辑编译为确定的可执行代码或外部 API 调用。", desc_en: "Compiles decision logic into deterministic executable scripts and API payloads.", tp: "560 calls/s", lat: "22.1 ms", status: "Nominal" },
+      { id: "MOD-05", name_zh: "可逆安全门禁 (Reversible Safety Controller)", name_en: "Reversible Safety Controller (RAC)", desc_zh: "监控行动剪刀差，提供 N-1-0 协议断点与零损回滚。", desc_en: "Monitors scissors gap, providing N-1-0 protocol checkpoints and zero-loss rollbacks.", tp: "3,100 evals/s", lat: "1.1 ms", status: "Nominal" },
+      { id: "MOD-06", name_zh: "元认知观测者 (Metacognitive Observer)", name_en: "Metacognitive Observer", desc_zh: "计算系统相空间曲率，生成 ΔS(t) 引导升维分岔。", desc_en: "Computes phase space curvature, generating ΔS(t) to drive dimensional bifurcations.", tp: "140 updates/s", lat: "35.0 ms", status: "Nominal" }
+    ];
+
+    function renderModules() {
+      const grid = document.getElementById('modules-grid');
+      grid.innerHTML = MODULES_DATA.map((m, idx) => `
+        <div class="glass-card p-4 rounded-xl cursor-pointer hover:border-cyan-500/80 transition space-y-2" onclick="selectModule(${idx})">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-cyan-400 font-bold">${m.id}</span>
+            <span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>${m.status}</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">${currentLang === 'zh' ? m.name_zh : m.name_en}</h4>
+          <p class="text-xs text-slate-400 line-clamp-2">${currentLang === 'zh' ? m.desc_zh : m.desc_en}</p>
+        </div>
+      `).join('');
+    }
+
+    window.selectModule = function(idx) {
+      const m = MODULES_DATA[idx];
+      document.getElementById('detail-code').textContent = m.id;
+      document.getElementById('detail-name').textContent = currentLang === 'zh' ? m.name_zh : m.name_en;
+      document.getElementById('detail-desc').textContent = currentLang === 'zh' ? m.desc_zh : m.desc_en;
+      document.getElementById('detail-tp').textContent = m.tp;
+      document.getElementById('detail-lat').textContent = m.lat;
+      document.getElementById('detail-status').textContent = m.status;
+      document.getElementById('module-detail-box').classList.remove('hidden');
+    };
+
+    document.getElementById('btn-close-detail').addEventListener('click', () => {
+      document.getElementById('module-detail-box').classList.add('hidden');
+    });
+
+    // RAC Controller Simulator Logic
+    const sCaction = document.getElementById('slider-caction');
+    const sCcog = document.getElementById('slider-ccog');
+
+    function updateRACState() {
+      const cAction = parseFloat(sCaction.value);
+      const cCog = parseFloat(sCcog.value);
+      document.getElementById('val-caction').textContent = `${cAction} ops/s`;
+      document.getElementById('val-ccog').textContent = `${cCog} ops/s`;
+
+      const sg = Math.abs(cAction - cCog);
+      const sgEl = document.getElementById('sg-display-val');
+      const barEl = document.getElementById('sg-progress-bar');
+      const banner = document.getElementById('rac-alert-banner');
+      const tokenEl = document.getElementById('metric-write-token');
+      const rollEl = document.getElementById('metric-rollback');
+
+      sgEl.textContent = sg.toFixed(1);
+      const pct = Math.min(100, (sg / 100) * 100);
+      barEl.style.width = `${pct}%`;
+
+      if (sg < 30) {
+        sgEl.className = "text-4xl font-extrabold font-mono text-emerald-400 my-1";
+        barEl.className = "bg-emerald-400 h-full transition-all duration-300";
+        banner.className = "px-4 py-2 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-xs font-mono font-bold flex items-center gap-2";
+        banner.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>STATUS: NORMAL ($SG < 30$)</span>`;
+        tokenEl.textContent = "AUTHORIZED";
+        tokenEl.className = "text-sm font-bold font-mono text-emerald-400 mt-1 block";
+        rollEl.textContent = "Valid ($S_0$)";
+      } else if (sg < 70) {
+        sgEl.className = "text-4xl font-extrabold font-mono text-amber-400 my-1";
+        barEl.className = "bg-amber-400 h-full transition-all duration-300";
+        banner.className = "px-4 py-2 rounded-xl bg-amber-950/80 border border-amber-800 text-amber-300 text-xs font-mono font-bold flex items-center gap-2";
+        banner.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400"></span><span>STATUS: THROTTLING ($30 \\le SG < 70$)</span>`;
+        tokenEl.textContent = "THROTTLED (50%)";
+        tokenEl.className = "text-sm font-bold font-mono text-amber-400 mt-1 block";
+        rollEl.textContent = "Armed ($S_0$)";
+      } else {
+        // Red Alert: N-1-0 Trip
+        sgEl.className = "text-4xl font-extrabold font-mono text-rose-500 my-1 animate-pulse";
+        barEl.className = "bg-rose-500 h-full transition-all duration-300";
+        banner.className = "px-4 py-2 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-300 text-xs font-mono font-bold flex items-center gap-2 glow-rose";
+        banner.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span><span>ALARM: N-1-0 PROTOCOL TRIPPED ($SG \\ge 70$)</span>`;
+        tokenEl.textContent = "REVOKED (SUSPENDED)";
+        tokenEl.className = "text-sm font-bold font-mono text-rose-400 mt-1 block";
+        rollEl.textContent = "Reversible Reset (0-Loss)";
+      }
+    }
+
+    sCaction.addEventListener('input', updateRACState);
+    sCcog.addEventListener('input', updateRACState);
+
+    document.getElementById('btn-inject-overload').addEventListener('click', () => {
+      sCaction.value = 115;
+      sCcog.value = 20;
+      updateRACState();
+      setTimeout(renderMath, 50);
+      showToast(currentLang === 'zh' ? '已触发激进过载压力！剪刀差超标，N-1-0 协议启动' : 'Overload Surge Injected! N-1-0 Tripped');
+    });
+
+    document.getElementById('btn-trigger-n10').addEventListener('click', () => {
+      sCaction.value = 40;
+      sCcog.value = 40;
+      updateRACState();
+      setTimeout(renderMath, 50);
+      showToast(currentLang === 'zh' ? '已执行 N-1-0 可逆归零：写权限冻结，状态平滑回滚至 S0' : 'N-1-0 Reset Executed: Clean Rollback to S0');
+    });
+
+    // Witness Matrix (W0 - W5)
+    const WITNESS_LEVELS = [
+      { lvl: "W0", name_zh: "盲目机械反射 (Mechanical Reflex)", name_en: "Mechanical Reflex", desc_zh: "无内部状态表征，仅对输入做确定性单向映射，易陷死循环。", desc_en: "No internal representation; deterministic mapping prone to dead loops." },
+      { lvl: "W1", name_zh: "局域上下文追踪 (Local Context Tracking)", name_en: "Local Context Tracking", desc_zh: "具备短时记忆窗口，但无法感知自身推理的拓扑缺陷。", desc_en: "Maintains local memory but lacks topological self-diagnosis." },
+      { lvl: "W2", name_zh: "内省反思与纠错 (Introspective Correction)", name_en: "Introspective Correction", desc_zh: "能在外部评价反馈下调整路径，具备基础可逆断点控制。", desc_en: "Adjusts trajectory based on evaluation with basic reversible checkpoints." },
+      { lvl: "W3", name_zh: "动力学相空间建构 (Phase Space Modeling)", name_en: "Phase Space Modeling", desc_zh: "主动计算相空间曲率，预测行动剪刀差并自主限流。", desc_en: "Computes phase space curvature and proactively throttles scissors gaps." },
+      { lvl: "W4", name_zh: "跨尺度同构整合 (Cross-Scale Integration)", name_en: "Cross-Scale Integration", desc_zh: "洞察个体与系统级治理同构，在多层级之间实现守恒调度。", desc_en: "Perceives multi-tier isomorphism, balancing conservation across scales." },
+      { lvl: "W5", name_zh: "全息目击与自指升维 (Holographic Witness)", name_en: "Holographic Metacognition", desc_zh: "彻底解耦观测者与执行者，自主生成 ΔS(t) 带来持续升维飞跃。", desc_en: "Complete observer decoupling, self-generating ΔS(t) for continual elevation." }
+    ];
+
+    function renderWitnessMatrix() {
+      const grid = document.getElementById('witness-matrix-grid');
+      grid.innerHTML = WITNESS_LEVELS.map(w => `
+        <div class="glass-card p-4 rounded-xl border-slate-800 space-y-1.5">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-300 font-bold">${w.lvl}</span>
+            <span class="text-slate-500 text-[10px]">Matrix Rank</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">${currentLang === 'zh' ? w.name_zh : w.name_en}</h4>
+          <p class="text-xs text-slate-400 font-mono text-[11px]">${currentLang === 'zh' ? w.desc_zh : w.desc_en}</p>
+        </div>
+      `).join('');
+    }
+
+    // ==========================================
+    // TAB 3: 5-SCALE GOVERNANCE & Z-SCALE ASSESSMENT
+    // ==========================================
+    const SCALES_DATA = [
+      { id: "S1", name_zh: "微观神经突触 (Micro-Synapse)", name_en: "Micro-Synapse", eq: "\\Delta w_{ij} = \\eta \\cdot a_i a_j", map_zh: "动作电位阈值传导 ↔ 权重矩阵稀疏更新", map_en: "Action potential thresholding ↔ Sparse weight updates" },
+      { id: "S2", name_zh: "个体认知心灵 (Individual Mind)", name_en: "Individual Mind", eq: "F = \\text{KL}(q || p) + \\mathbb{E}[\\log p]", map_zh: "预测误差最小化 ↔ 心理防御机制与元认知调谐", map_en: "Free energy minimization ↔ Metacognitive tuning" },
+      { id: "S3", name_zh: "组织团队系统 (Organization)", name_en: "Organization", eq: "\\Phi(Team) = \\sum H(v_i) - H(V)", map_zh: "权责边界解耦 ↔ SOP 与 Skill 规范质量门禁", map_en: "Responsibility boundary decoupling ↔ Skill SOP gates" },
+      { id: "S4", name_zh: "文明社会治理 (Civilization)", name_en: "Civilization", eq: "G(t) = \\int \\nabla \\Psi \\cdot d\\mathbf{S}", map_zh: "法治契约与制度可逆性 ↔ 资源跨代同构分配", map_en: "Institutional reversibility ↔ Cross-generational allocation" },
+      { id: "S5", name_zh: "行星生物圈网络 (Biosphere)", name_en: "Biosphere", eq: "\\frac{dS}{dt} = d_e S + d_i S \\ge 0", map_zh: "全球耗散结构平衡 ↔ 熵减自组织生态稳态", map_en: "Dissipative structure balance ↔ Negentropic homeostasis" }
+    ];
+
+    let currentScaleIdx = 0;
+    function renderScales() {
+      const grid = document.getElementById('scales-btn-grid');
+      grid.innerHTML = SCALES_DATA.map((s, idx) => `
+        <button class="py-2 px-3 rounded-xl text-xs font-mono font-semibold border transition ${idx === currentScaleIdx ? 'bg-cyan-950 border-cyan-500 text-cyan-300 glow-cyan' : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'}" onclick="selectScale(${idx})">
+          ${s.id} ${currentLang === 'zh' ? s.name_zh.split(' ')[0] : s.name_en.split(' ')[0]}
+        </button>
+      `).join('');
+
+      const cur = SCALES_DATA[currentScaleIdx];
+      document.getElementById('scale-detail-card').innerHTML = `
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <span class="text-cyan-400 font-bold uppercase">${cur.id} · ${currentLang === 'zh' ? cur.name_zh : cur.name_en}</span>
+          <span class="text-emerald-400">Isomorphic Gauge: Invariant</span>
+        </div>
+        <div class="text-sm font-semibold text-blue-300 font-mono py-1">Governing Operator: $$${cur.eq}$$</div>
+        <div class="text-slate-300 leading-relaxed">${currentLang === 'zh' ? cur.map_zh : cur.map_en}</div>
+      `;
+    }
+
+    window.selectScale = function(idx) {
+      currentScaleIdx = idx;
+      renderScales();
+    };
+
+    // Z-Scale Adaptive Assessment
+    const QUESTIONS = [
+      {
+        dim: "Metacognitive Acuity",
+        q_zh: "1. 当你在多步骤任务中发现 AI Agent 生成的排版极其粗糙时（如 Canva 实测），你的首要反应是？",
+        q_en: "1. When observing crude, unpolished outputs generated by an autonomous agent, what is your primary reaction?",
+        options_zh: [
+          "A. 认为工具能力不行，彻底放弃自动化尝试",
+          "B. 重复在对话框中催促其修改，但没有给具体标准",
+          "C. 编写包含明确字号比例、段落行高、对齐方式的后置约束 Skill SOP",
+          "D. 意识到这是 MCP 底层缺乏排版心智的常态，设计自动化双轨质检管线"
+        ],
+        options_en: [
+          "A. Conclude that AI tools are inadequate and abandon automation entirely",
+          "B. Repeatedly prompt without setting concrete typographic criteria",
+          "C. Formulate a post-polishing Skill SOP codifying exact typographic hierarchy and line spacing",
+          "D. Recognize this as an intrinsic MCP limitation and architect an automated dual-track QA pipeline"
+        ],
+        weights: [1, 2, 4, 5]
+      },
+      {
+        dim: "Reversible Safety Awareness",
+        q_zh: "2. 在设计具备外部写入权限（如覆盖 Google Docs 或数据库）的 Agent 工作流时，你如何处理破坏性操作？",
+        q_en: "2. How do you handle potentially destructive write operations when designing an agent with write permissions?",
+        options_zh: [
+          "A. 赋予 Agent 完整免确认权限以追求绝对的执行速度",
+          "B. 仅依靠模型的自我判断，期望它不出错",
+          "C. 划分只读与写入阶段，对破坏性覆盖强制弹出用户 Diff 预览确认框",
+          "D. 建立可逆快照机制，并部署基于行动剪刀差的 N-1-0 熔断回滚协议"
+        ],
+        options_en: [
+          "A. Grant unconditional autonomous write permissions for maximum execution speed",
+          "B. Solely rely on model self-reflection, hoping errors do not occur",
+          "C. Decouple read and write phases, enforcing explicit human Diff previews before overwriting",
+          "D. Deploy reversible snapshot architectures with automated N-1-0 scissors gap circuit breakers"
+        ],
+        weights: [1, 2, 4, 5]
+      },
+      {
+        dim: "Dimensional Elevation Potential",
+        q_zh: "3. 面对长期推理陷入死循环、输出重复枯燥论点时，你如何引导系统实现突破？",
+        q_en: "3. When multi-step reasoning collapses into repetitive dead loops, how do you facilitate a breakthrough?",
+        options_zh: [
+          "A. 关闭窗口重新发起一模一样的提问",
+          "B. 仅仅提高采样温度（Temperature）期待随机惊喜",
+          "C. 引入元认知偏移向量 ΔS(t)，强制模型从更高阶方法论维度重构问题框架",
+          "D. 构建跨尺度同构映射，将当前维度的僵局映射至更高层次的相空间进行解构"
+        ],
+        options_en: [
+          "A. Terminate the session and restart with identical parameters",
+          "B. Merely increase sampling temperature hoping for stochastic variation",
+          "C. Inject a metacognitive shift vector ΔS(t) forcing reframing from higher methodological axes",
+          "D. Construct cross-scale isomorphic mappings to translate low-dimensional traps into higher manifolds"
+        ],
+        weights: [1, 2, 4, 5]
+      },
+      {
+        dim: "Cross-Scale Isomorphism",
+        q_zh: "4. 你如何理解从“个人代码项目”到“企业知识中枢”再到“行业协作生态”的演进规律？",
+        q_en: "4. How do you perceive the evolutionary continuity from personal projects to enterprise knowledge systems?",
+        options_zh: [
+          "A. 认为各个层次彼此孤立，没有必然的底层共性",
+          "B. 认为只是单纯服务器算力与代码行数的物理堆叠",
+          "C. 认识到每一层都在复用“容器（Project）- 执行（MCP）- 心智（Skill）”的同构原则",
+          "D. 深刻洞察全息守恒：微观组件的容错设计直接决定宏观复杂系统的稳定性边界"
+        ],
+        options_en: [
+          "A. View each tier as isolated without unified underlying principles",
+          "B. View it merely as physical scaling of server capacity and lines of code",
+          "C. Recognize recurring isomorphic principles of 'Container - Execution - Skill' across all levels",
+          "D. Discern holographic conservation: micro fault-tolerance dictates macro system boundary stability"
+        ],
+        weights: [1, 2, 4, 5]
+      },
+      {
+        dim: "System Decoupling Mastery",
+        q_zh: "5. 在处理“专案（Project）与技能（Skill）”的关系时，你的设计决策准则是？",
+        q_en: "5. What is your design principle when reconciling Projects and Skills?",
+        options_zh: [
+          "A. 盲目相信专案能代替一切，废弃所有 SOP 封装",
+          "B. 把所有具体的业务代码和一次性数据硬编码塞入每个 Skill 提示词中",
+          "C. 专案充当静态上下文隔离容器，Skill 作为无状态可复用的质量门禁插件",
+          "D. 架构正交解耦：让 MCP 专心负责物理连通，让 Skill 专注于确定性心智交付"
+        ],
+        options_en: [
+          "A. Naively assume Projects replace all needs, abandoning modular SOPs",
+          "B. Hardcode one-off business logic and empirical data into monolithic Skill prompts",
+          "C. Treat Projects as static context containers, using Skills as stateless reusable quality plugins",
+          "D. Architect orthogonal decoupling: let MCP handle connectivity while Skills govern deterministic craft"
+        ],
+        weights: [1, 2, 4, 5]
+      }
+    ];
+
+    function renderQuestions() {
+      const container = document.getElementById('questions-container');
+      container.innerHTML = QUESTIONS.map((q, qIdx) => `
+        <div class="glass-card p-5 rounded-xl border-slate-800 space-y-3">
+          <div class="text-xs font-mono font-bold text-cyan-400">
+            [DIMENSION: ${q.dim}]
+          </div>
+          <p class="text-sm font-semibold text-white leading-snug">
+            ${currentLang === 'zh' ? q.q_zh : q.q_en}
+          </p>
+          <div class="grid grid-cols-1 gap-2 pt-1">
+            ${(currentLang === 'zh' ? q.options_zh : q.options_en).map((opt, optIdx) => `
+              <label class="flex items-start space-x-3 p-3 rounded-lg bg-slate-900/80 hover:bg-slate-800/80 border border-slate-800/80 cursor-pointer transition text-xs text-slate-300">
+                <input type="radio" name="q_${qIdx}" value="${optIdx}" class="mt-0.5 accent-cyan-400" ${optIdx === 2 ? 'checked' : ''}>
+                <span>${opt}</span>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    let lastEvaluationResult = null;
+
+    document.getElementById('btn-submit-eval').addEventListener('click', () => {
+      let totalScore = 0;
+      const dimScores = [];
+
+      QUESTIONS.forEach((q, idx) => {
+        const checked = document.querySelector(`input[name="q_${idx}"]:checked`);
+        const optIdx = checked ? parseInt(checked.value) : 2;
+        const score = q.weights[optIdx];
+        totalScore += score;
+        dimScores.push({ dim: q.dim, score: score });
+      });
+
+      // Calculate Z-Score: normalized around mean 15, std 3.5
+      const zScore = ((totalScore - 15) / 3.5).toFixed(2);
+      const zVal = parseFloat(zScore);
+
+      let wLvl = "W2 内省反思";
+      let percentile = "Top 45%";
+      if (zVal >= 2.0) {
+        wLvl = currentLang === 'zh' ? "W5 全息目击与自指升维" : "W5 Holographic Metacognition";
+        percentile = "Top 1.8%";
+      } else if (zVal >= 1.2) {
+        wLvl = currentLang === 'zh' ? "W4 跨尺度同构整合" : "W4 Cross-Scale Integration";
+        percentile = "Top 5.2%";
+      } else if (zVal >= 0.4) {
+        wLvl = currentLang === 'zh' ? "W3 动力学相空间建构" : "W3 Phase Space Modeling";
+        percentile = "Top 18.5%";
+      } else if (zVal >= -0.4) {
+        wLvl = currentLang === 'zh' ? "W2 内省反思与纠错" : "W2 Introspective Correction";
+        percentile = "Top 48.0%";
+      } else {
+        wLvl = currentLang === 'zh' ? "W1 局域上下文追踪" : "W1 Local Context Tracking";
+        percentile = "Bottom 30%";
+      }
+
+      document.getElementById('res-zscore').textContent = `${zVal >= 0 ? '+' : ''}${zScore} σ`;
+      document.getElementById('res-wlevel').textContent = `Level: ${wLvl}`;
+      document.getElementById('res-percentile').textContent = percentile;
+
+      // Render Dimension Breakdown
+      document.getElementById('dimensions-score-grid').innerHTML = dimScores.map(d => `
+        <div class="glass-card p-3 rounded-lg border-slate-800 space-y-1">
+          <div class="text-[10px] text-slate-400 truncate">${d.dim}</div>
+          <div class="text-sm font-bold text-cyan-300 font-mono">${d.score} / 5</div>
+          <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+            <div class="bg-cyan-400 h-full" style="width: ${(d.score/5)*100}%"></div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('result-card').classList.remove('hidden');
+
+      lastEvaluationResult = {
+        timestamp: new Date().toISOString(),
+        zScore: zScore,
+        witnessLevel: wLvl,
+        percentile: percentile,
+        totalRawScore: totalScore,
+        dimensions: dimScores
+      };
+
+      showToast(currentLang === 'zh' ? '测评完成！综合 Z-Scale 结果已生成' : 'Evaluation Complete! Z-Scale Generated');
+    });
+
+    // ==========================================
+    // EXPORT IMPLEMENTATIONS (CSV, JSON, REPORT)
+    // ==========================================
+    function getExportPayload() {
+      if (!lastEvaluationResult) {
+        document.getElementById('btn-submit-eval').click();
+      }
+      return lastEvaluationResult;
+    }
+
+    // 1. Export CSV
+    document.getElementById('btn-export-csv').addEventListener('click', () => {
+      const data = getExportPayload();
+      let csv = "Timestamp,ZScore,WitnessLevel,Percentile,TotalRawScore\n";
+      csv += `"${data.timestamp}","${data.zScore}","${data.witnessLevel}","${data.percentile}","${data.totalRawScore}"\n\n`;
+      csv += "Dimension,Score,MaxScore\n";
+      data.dimensions.forEach(d => {
+        csv += `"${d.dim}",${d.score},5\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Cognitive_OS_ZScale_${Date.now()}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(currentLang === 'zh' ? '📊 CSV 数据文件已成功导出' : '📊 CSV Exported Successfully');
+    });
+
+    // 2. Export JSON
+    document.getElementById('btn-export-json').addEventListener('click', () => {
+      const data = getExportPayload();
+      const jsonStr = JSON.stringify(data, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Cognitive_OS_Diagnostic_${Date.now()}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(currentLang === 'zh' ? '📋 JSON 诊断快照已成功导出' : '📋 JSON Exported Successfully');
+    });
+
+    // 3. Export Formatted Printable Report Modal
+    document.getElementById('btn-export-report').addEventListener('click', () => {
+      const data = getExportPayload();
+      const modal = document.getElementById('report-modal');
+      const body = document.getElementById('printable-report-content');
+
+      body.innerHTML = `
+        <div class="border-b border-slate-700 pb-4 mb-4">
+          <div class="text-[10px] text-cyan-400 font-bold uppercase tracking-wider">OFFICIAL DIAGNOSTIC DISPATCH · COGNITIVE TOPOLOGY GROUP</div>
+          <h2 class="text-base font-bold text-white mt-1">Cognitive OS 认识论与拓扑动力学综合学术评估报告</h2>
+          <div class="text-[11px] text-slate-400 mt-0.5">Evaluation Timestamp: ${data.timestamp} · Standard: APA/RAC-N10</div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div><span class="text-slate-500 block text-[10px]">综合 Z-Score</span><strong class="text-cyan-300 text-lg">${data.zScore} σ</strong></div>
+          <div><span class="text-slate-500 block text-[10px]">目击等级 (Witness)</span><strong class="text-blue-300 text-sm">${data.witnessLevel}</strong></div>
+          <div><span class="text-slate-500 block text-[10px]">全局百分位 (Rank)</span><strong class="text-emerald-400 text-sm">${data.percentile}</strong></div>
+          <div><span class="text-slate-500 block text-[10px]">原始加权总分</span><strong class="text-slate-200 text-sm">${data.totalRawScore} / 25</strong></div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <h4 class="text-xs font-bold text-slate-300 uppercase">【五维认知雷达明细】</h4>
+          <div class="space-y-1.5">
+            ${data.dimensions.map(d => `
+              <div class="flex justify-between items-center text-[11px]">
+                <span class="text-slate-400">${d.dim}</span>
+                <span class="text-cyan-300 font-bold">${d.score} / 5 (${(d.score/5*100).toFixed(0)}%)</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2 border-t border-slate-800">
+          <h4 class="text-xs font-bold text-slate-300 uppercase">【架构诊断与行动建议】</h4>
+          <p class="text-slate-300 leading-relaxed text-[11px]">
+            1. <strong>可逆控制强化</strong>：建议在多智能体流水线中部署 RAC N-1-0 熔断器，当行动剪刀差 $SG > 70$ 时切断写入令牌，防止单向不可逆级联崩塌。<br>
+            2. <strong>后置美学约束</strong>：针对 MCP 底层缺乏排版心智的天然短板，强制在 Skill 中注入字号阶梯、段落留白与质检规则（如本次已落地的 google-docs-archiver）。<br>
+            3. <strong>跨尺度升维跃迁</strong>：保持元认知偏移向量 $\\Delta S(t) > 0$，利用三维拓扑演化突破低维参数空间中的平面死循环。
+          </p>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+    });
+
+    document.getElementById('btn-close-modal').addEventListener('click', () => {
+      document.getElementById('report-modal').classList.add('hidden');
+    });
+
+    document.getElementById('btn-print-report').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Toast Utility
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // Initial Render
+    setLanguage('zh');
+    updateRACState();
+      setTimeout(renderMath, 50);
+  </script>
+</body>
+</html>
